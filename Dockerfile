@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y --allow-downgrades \
 RUN apt-get update -qq \
  && apt-get install --no-install-recommends -y \
     software-properties-common \
-    python3-pip
+    python3-pip \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 

@@ -9,10 +9,10 @@ RUN apt-get update && apt-get install -y --allow-downgrades \
 
 # install python3
 RUN apt-get update
-RUN apt-get install software-properties-common
+RUN apt-get install -y software-properties-common
 
 # instap pip
-RUN apt-get install python3-pip
+RUN apt-get install -y python3-pip
 
 # install numpy
 RUN pip3 --no-cache-dir install -U numpy==1.14.5

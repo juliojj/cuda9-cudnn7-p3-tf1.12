@@ -7,12 +7,14 @@ RUN apt-get update && apt-get install -y --allow-downgrades \
     libcudnn7=$CUDNN_VERSION-1+cuda9.0 && \     
  rm -rf /var/lib/apt/lists/*
 
-# install python3
-RUN apt-get update
-RUN apt-get install -y software-properties-common
 
-# instap pip
-RUN apt-get install -y python3-pip
+# install packages
+RUN apt-get update -qq \
+ && apt-get install --no-install-recommends -y \
+    software-properties-common \
+    python3-pip
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
 
 # install numpy
 RUN pip3 --no-cache-dir install -U numpy==1.14.5

@@ -11,7 +11,6 @@ RUN apt-get update && apt-get install -y --allow-downgrades --allow-change-held-
 RUN apt-get update -qq \
  && apt-get install -y --no-install-recommends\
     software-properties-common \
-    python-setuptools \
     python3-pip \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
@@ -20,6 +19,7 @@ RUN apt-get update -qq \
 RUN pip3 --no-cache-dir install -U numpy==1.14.5
 
 RUN pip3 install setuptools
+RUN pip3 install wheel
 
 # install tensorflow (1.4.1 to work with cuda8 and cudnn 6)
 RUN pip3 install tensorflow-gpu==1.12.0

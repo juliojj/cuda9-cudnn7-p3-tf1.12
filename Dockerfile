@@ -12,6 +12,7 @@ RUN apt-get update -qq \
  && apt-get install -y --no-install-recommends\
     software-properties-common \
     python3-pip \
+    python3.5-dev \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 

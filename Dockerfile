@@ -12,6 +12,7 @@ RUN apt-get update -qq \
  && apt-get install -y --no-install-recommends\
     software-properties-common \
     python3-pip \
+    gcc \
     python3.5-dev \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
@@ -19,6 +20,7 @@ RUN apt-get update -qq \
 # install numpy
 RUN pip3 --no-cache-dir install -U numpy==1.14.5
 
+# additional libraries
 RUN pip3 install setuptools
 RUN pip3 install wheel
 

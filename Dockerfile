@@ -9,8 +9,9 @@ RUN apt-get update && apt-get install -y --allow-downgrades --allow-change-held-
 
 # install packages
 RUN apt-get update -qq \
- && apt-get install --no-install-recommends -y \
+ && apt-get install -y --no-install-recommends apt-utils\
     software-properties-common \
+    python-setuptools \
     python3-pip \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*

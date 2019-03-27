@@ -18,8 +18,8 @@ RUN pip3 --no-cache-dir install -U numpy==1.14.5
 RUN pip3 install setuptools
 RUN pip3 install wheel
 
-# install tensorflow (1.4.1 to work with cuda8 and cudnn 6)
-RUN pip3 install tensorflow-gpu==1.12.1
+# install tensorflow
+RUN pip3 install tensorflow-gpu==1.12.0
 
 # install other libraries
 RUN pip3 install pandas
